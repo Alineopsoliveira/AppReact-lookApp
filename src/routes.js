@@ -1,6 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+// import {createDrawerNavigator} from '@react-navigation/drawer';
+import 'react-native-reanimated';
 
 import Home from './pages/Home';
 import Signin from './pages/Signin';
@@ -8,6 +10,20 @@ import Signup from './pages/Signup';
 import Feed from './pages/Feed';
 
 const Stack = createStackNavigator();
+// const Drawer = createDrawerNavigator();
+
+// const DrawerComponent = () => {
+//   return (
+//     <Drawer.Navigator
+//       initialRouteName="Feed"
+//       screenOptions={{headerShown: false}}>
+//       <Drawer.Screen name="Feed" component={Feed} />
+//       <Drawer.Screen name="Marketsplace" component={Feed} />
+//       <Drawer.Screen name="Orders" component={Feed} />
+//     </Drawer.Navigator>
+//   );
+// };
+
 const Routes = () => {
   return (
     <NavigationContainer>
