@@ -8,6 +8,10 @@ import Home from './pages/Home';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Feed from './pages/Feed';
+import Marketplace from './pages/Marketplace';
+import Category from './pages/Marketplace/category';
+import Product from './pages/Marketplace/product';
+import Menu from './components/Menu';
 
 const Stack = createStackNavigator();
 // const Drawer = createDrawerNavigator();
@@ -55,6 +59,34 @@ const Routes = () => {
           }}
           name="Feed"
           component={Feed}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Marketplace"
+          component={Marketplace}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Category"
+          component={Category}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Product"
+          component={Product}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Menu"
+          component={Menu}
         />
       </Stack.Navigator>
     </NavigationContainer>

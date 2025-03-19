@@ -1,31 +1,43 @@
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {SafeAreaView, StatusBar, View} from 'react-native';
 import {Box, Title, Touchable} from '../../components';
 import {colors} from '../../styles/theme.json';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-// import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import util from '../../util';
 
-const Header = () => {
-  // const navigation = useNavigation();
+const Header = ({title = 'Explore', right = null, goBack = false}) => {
+  const {navigate} = useNavigation();
   return (
-    <>
+    <View
+      style={{
+        borderBottomWidth: 1,
+        borderBottomStyle: 'solid',
+        borderBottomColor: util.toAlpha(colors.muted, 5),
+        backgroundColor: colors.light,
+      }}>
       <StatusBar />
-      <Box
-        fluid
-        height="100px"
-        justify="center"
-        border={`1px solid ${colors.muted}50`}>
-        <SafeAreaView style={{flexDirection: 'row'}}>
-          <Touchable width="80px" justify="center" align="center">
-            <Icon name="menu" size={20} />
-          </Touchable>
-          <Touchable align="center">
-            <Title>Explore</Title>
-          </Touchable>
-          <Touchable width="80px"></Touchable>
-        </SafeAreaView>
-      </Box>
-    </>
+      <SafeAreaView
+        style={{
+          flexDirection: 'row',
+          width: '100%',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+        <Touchable
+          width="70px"
+          justify="center"
+          align="center"
+          hasPadding
+          onPress={() => navigate('Menu')}>
+          <Icon name={!goBack ? 'menu' : 'arrow-left'} size={20} />
+        </Touchable>
+        <Touchable align="center">
+          <Title>{title}</Title>
+        </Touchable>
+        {right ? right() : <Touchable hasPadding width="70px" />}
+      </SafeAreaView>
+    </View>
   );
 };
 
