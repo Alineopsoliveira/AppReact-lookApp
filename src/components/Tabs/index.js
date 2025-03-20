@@ -8,14 +8,14 @@ const Tabs = ({tabs = [], active = '', onChange = tab => {}}) => {
   const totalTabs = tabs?.length;
   const activeTabStyle = {
     borderBottomWidth: 3,
-    borderBottomColor: colors.danger,
+    borderBottomColor: colors.primary,
   };
 
   return (
     <ScrollView
       horizontal
       style={{
-        maxHeight: 60,
+        maxHeight: 70,
         backgroundColor: colors.light,
       }}>
       {tabs?.map(tab => (
