@@ -4,15 +4,18 @@ import Header from '../../components/Header';
 import Tabs from '../../components/Tabs';
 import Product from '../../components/Product';
 import PaymentForms from '../../components/Forms/payment';
+import CongratsModal from '../../components/Modals/congrats';
 
 import colors from '../../styles/theme.json';
 import util from '../../util';
 import {ScrollView, Title, Spacer, Box, Text, Button} from '../../components';
 
 const Cart = () => {
+  const [showCongrats, setShowCongrats] = useState(false);
   const [tab, setTab] = useState('payment');
   return (
     <>
+      {showCongrats && <CongratsModal />}
       <Header title="Cart" goBack />
       <Tabs
         tabs={[
@@ -111,11 +114,12 @@ const Cart = () => {
               onChange={creditCardData => console.log(creditCardData)}
             />
             <Spacer size="30px" />
-            <Button block onPress={() => {}}>
+            <Button block onPress={() => setShowCongrats(true)}>
               <Text color="light">Confirmation</Text>
             </Button>
           </>
         )}
+        <Spacer size="50px" />
       </ScrollView>
     </>
   );

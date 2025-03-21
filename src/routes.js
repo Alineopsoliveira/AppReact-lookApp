@@ -13,6 +13,7 @@ import Category from './pages/Marketplace/category';
 import Product from './pages/Marketplace/product';
 import Menu from './components/Menu';
 import Cart from './pages/Cart';
+import Orders from './pages/Orders';
 
 const Stack = createStackNavigator();
 // const Drawer = createDrawerNavigator();
@@ -32,7 +33,7 @@ const Stack = createStackNavigator();
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Cart">
+      <Stack.Navigator initialRouteName="Orders">
         <Stack.Screen
           options={{
             headerShown: false,
@@ -95,6 +96,13 @@ const Routes = () => {
           }}
           name="Cart"
           component={Cart}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Orders"
+          component={Orders}
         />
       </Stack.Navigator>
     </NavigationContainer>

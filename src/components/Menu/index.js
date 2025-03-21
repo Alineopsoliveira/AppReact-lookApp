@@ -1,7 +1,5 @@
 import React from 'react';
 import {Box, Text, Button, Spacer} from '..';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
-import {colors} from '../../styles/theme.json';
 import {useNavigation} from '@react-navigation/native';
 
 const Menu = () => {
