@@ -33,7 +33,7 @@ const Stack = createStackNavigator();
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Orders">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           options={{
             headerShown: false,
